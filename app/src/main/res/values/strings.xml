@@ -1,0 +1,173 @@
+<resources>
+    <string name="app_name">FormBlok</string>
+    <string name="image">image</string>
+    <string name="retry">Retry</string>
+    <string name="refresh">Refresh</string>
+    <string name="title_activity_maps">Maps</string>
+
+
+    <string name="next_label">next</string>
+    <string name="search_addresses_label">Search Addresses</string>
+    <string name="find_properties_label">Find properties and view information such as planning overlays.</string>
+    <string name="organize_your_build_label">Organize Your Build</string>
+    <string name="get_a_quote_label">Get a realistic quote for the materials you wish to use for your build.</string>
+    <string name="manage_project_label">Manage Projects</string>
+    <string name="keep_track_label">Keep track of all of your latest development projects.</string>
+    <string name="get_started">Get Started</string>
+    <string name="welcome_to">Welcome To</string>
+    <string name="formblok_io">formblok.io</string>
+    <string name="welcome_to_formblok">Welcome to \nformblok.io</string>
+    <string name="email">Email</string>
+    <string name="please_enter_your_email_hint">Please Enter Your Email</string>
+    <string name="validation_email">Valid email address required</string>
+    <string name="validation_password">Password is incorrect</string>
+
+    <string name="_please_turn_on_your_location_from_settings">To show you the addresses in your area this application
+        needs your device location, Please turn on your location from settings.
+    </string>
+    <string name="_please_allow_location_permission">To show you the addresses in your area this application needs your
+        device location, Please allow permission to access your device location for FormBlok
+    </string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_your_password_label">Create your password</string>
+    <string name="password">password</string>
+    <string name="Password">Password</string>
+    <string name="please_enter_your_password_hint">Please Enter Your Password</string>
+    <string name="please_enter_your_password">Please enter your password</string>
+    <string name="forgot_label">Forgot?</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password_sub">Enter your email address and we will send you instructions to reset your
+        password.
+    </string>
+    <string name="forgot_password_with_sub_heading">Forgot password?\nEnter your email address and we will send you
+        instructions to reset your
+        password.
+    </string>
+    <string name="reset_password_with_sub_heading">Reset password\nWe have sent you instructions on how to reset your
+        password. Please check
+        your inbox.
+    </string>
+    <string name="reset_password_sub">Please enter you new password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="email_sent">Email Sent</string>
+    <string name="reset_password_instructions">We have sent you instructions on how to reset your password. Please check
+        your inbox.
+    </string>
+    <string name="open_mail_app">Open Mail App</string>
+    <string name="password_reset">Password Reset</string>
+    <string name="you_have_successfully_reset_your_password">You have successfully reset your password</string>
+    <string name="login">Log In</string>
+    <string name="create_your_password">Create your password</string>
+    <string name="what_type_of_user_are_you">What type of user\nare you?</string>
+    <string name="are_you">are you?</string>
+    <string name="or">or</string>
+    <string name="buyer">Buyer</string>
+    <string name="agent">Agent</string>
+    <string name="what_is_your_name">What is your name?</string>
+    <string name="name">name?</string>
+    <string name="name_">name</string>
+    <string name="please_enter_your_name_hint">Please enter your name</string>
+    <string name="validation_name">Valid Name Required</string>
+    <string name="what_do_you_look_like">What do you look\nlike?</string>
+    <string name="like">like?</string>
+    <string name="choose_photo">Choose Photo</string>
+    <string name="select_picture">Select Picture</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="allow_storage_permission_message">Allow storage permission</string>
+    <string name="allow_permission">Allow Permission</string>
+    <string name="when_were_you_born">When were you\nborn?</string>
+    <string name="born">born?</string>
+    <string name="what_is_your_gender">What is your gender?</string>
+    <string name="what_is_your_email">What is your \nemail address?</string>
+    <string name="email_address">email address?</string>
+    <string name="gender">gender?</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="account_created">Account Created</string>
+    <string name="continue_label">Continue</string>
+    <string name="you_have_successfully_created_your_account">You Have Successfully Created Your Account</string>
+    <string name="privacy_amp_terms"><![CDATA[Privacy & Terms]]></string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="accept">Accept</string>
+    <string name="privacy_sub_heading">
+        <![CDATA[To finish creating your account we need you to accept our Privacy Policy and Terms & Conditions.]]></string>
+    <string name="legal">Legal</string>
+    <string name="change_photo">Change Photo</string>
+    <string name="use_photo">Use Photo</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="title_activity_home2">Home2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+    <string name="account_title">account</string>
+    <string name="edit_profile_label">edit profile</string>
+    <string name="save">Save</string>
+    <string name="settings_title">Settings</string>
+    <string name="log_out">Log Out</string>
+    <string name="log_out_title">Log Out?</string>
+    <string name="logout_sub_heading">Are you sure you want to log out?</string>
+
+    <string name="change_old_heading">Change password\n Please enter your old password</string>
+    <string name="change_new_heading">Change password\n Now enter your new password</string>
+
+    <string name="change_old_password_sub_heading">Please enter your old password</string>
+    <string name="change_new_password_sub_heading">Now enter your new password</string>
+    <string name="password_created">Password Created</string>
+    <string name="you_have_successfully_change_your_password">You have successfully change your password</string>
+    <string name="profile_updated">Profile Updated</string>
+    <string name="you_have_successfully_updated_your_profile">You have successfully updated your profile</string>
+    <string name="project_label">projects</string>
+    <string name="search">Search…</string>
+    <string name="please_enter_your_project_title">Please enter your project title</string>
+    <string name="project_created">Project Created</string>
+    <string name="you_have_successfully_created_your_project">You have successfully created your project</string>
+    <string name="Notification_label">notifications</string>
+    <string name="mark_all_as_read">mark all as read</string>
+    <string name="no_properties_yet">No Properties Yet</string>
+    <string name="to_get_started_search_for_an_address_and_add_a_property_to_the_project">To get started search for an
+        address and add a property to the project.
+    </string>
+    <string name="explore_label">explore</string>
+    <string name="search_address">Search Address</string>
+    <string name="planning_information">Planning Information</string>
+    <string name="overlays">overlays</string>
+    <string name="traditional">Traditional</string>
+    <string name="contemporary">Contemporary</string>
+    <string name="total_liveable_area">Total Liveable Area</string>
+    <string name="total_cost_of_construction">TOTAL COST OF CONSTRUCTION</string>
+    <string name="get_quote">Get Quote</string>
+    <string name="new_build">New Build</string>
+    <string name="renovation">Renovation</string>
+    <string name="single">Single</string>
+    <string name="doubleLabel">Double</string>
+    <string name="multi">Multi</string>
+    <string name="apartments">Apartments</string>
+    <string name="calculated_area">Calculated Area</string>
+    <string name="please_select_from_the_rooms_below">Please select from the rooms below:</string>
+    <string name="edit_master_bedroom">Edit Master Bedroom</string>
+    <string name="please_adjust_the_size_below">Please adjust the size below</string>
+    <string name="x">x</string>
+    <string name="equal">=</string>
+    <string name="width">width</string>
+    <string name="height">height</string>
+    <string name="area">area</string>
+    <string name="length">length</string>
+    <string name="liveable_area">liveable area</string>
+    <string name="find_out_more">Find Out More</string>
+    <string name="turn_on_location">Turn on Location</string>
+    <string name="add_to_project">Add To Project</string>
+    <string name="please_enter_built_area">Please enter built area</string>
+    <string name="built_area">Built Area</string>
+    <string name="demolish_area">Demolish Area</string>
+    <string name="please_enter_the_demolish_area">Please enter the demolish area</string>
+    <string name="no_current_projects">No Current Projects</string>
+    <string name="you_will_need_to_create_a_project_nbefore_you_can_add_a_property_n_n_nwould_you_like_to_create_one_now">
+        You will need to create a project before you can add a property Would you like to create one now?
+    </string>
+    <string name="search_and_suburb">Search any Suburb</string>
+    <string name="zones">Zones</string>
+
+</resources>

@@ -1,0 +1,135 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/exploreBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:id="@+id/ivProjectCrossIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/ic_settings"
+                android:contentDescription="@string/image"
+                android:layout_alignParentTop="true"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/clExploreFragmentContainer"
+                tools:context="com.incubasys.formblok.profile.ui.ProfileFragment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivProjectCrossIcon">
+
+            <TextView
+                    android:id="@+id/tvProjectLabel"
+                    android:layout_width="match_parent"
+                    android:text="@string/explore_label"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="48sp"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/visbycf_heavy"
+                    android:textColor="?attr/colorPrimary"
+                    app:autoSizeMaxTextSize="100sp"
+                    app:autoSizeStepGranularity="2sp"
+                    android:layout_height="60dp"
+                    android:letterSpacing="-0.06"
+                    android:layout_marginEnd="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="0dp"
+                    android:layout_marginBottom="-12dp"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="?attr/colorPrimary"
+                    android:id="@+id/relativeLayout"
+                    android:layout_below="@+id/tvProjectLabel">
+
+                <ImageView
+                        android:src="@drawable/ic_search_white"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="16dp"
+                        android:id="@+id/ivProjectSearchImage"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:contentDescription="@string/image"/>
+
+                <EditText
+                        style="@style/SimpleEditText"
+                        android:textSize="22sp"
+                        android:id="@+id/etExploreFragmentSearchBox"
+                        android:fontFamily="@font/visbycf_light"
+                        android:layout_toEndOf="@+id/ivProjectSearchImage"
+                        android:layout_centerVertical="true"
+                        android:hint="@string/search_and_suburb"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:inputType="text"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="8dp"
+                        android:includeFontPadding="false"
+                        android:textColorHint="@color/colorOnPrimary"
+                        android:textColor="@color/colorOnPrimary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="Autofill"
+                        android:textCursorDrawable="@drawable/custom_cursor_color"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="8dp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/map"
+                tools:context=".explore.ui.ExploreFragment"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                app:layout_constraintTop_toBottomOf="@+id/clExploreFragmentContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+        />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPredictions"
+                android:background="@color/colorOnPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/clExploreFragmentContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+        />
+
+        <ImageView
+                android:id="@+id/ivCompass"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/ic_compass"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@string/image"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

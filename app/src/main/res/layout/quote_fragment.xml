@@ -1,0 +1,93 @@
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="vm" type="com.incubasys.formblok.projects.viewmodel.QuoteViewModel"/>
+    </data>
+    <androidx.core.widget.NestedScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_height="match_parent" android:layout_width="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+                android:id="@+id/rlInfoContainer"
+                android:layout_width="match_parent"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:id="@+id/tvQuoteHeadLabel"
+                    tools:text="$530,291"
+                    android:textSize="48sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="?attr/colorPrimary"
+                    android:fontFamily="@font/visbycf_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/tvQuoteSubLabel"
+                    android:text="@string/total_cost_of_construction"
+                    android:textSize="12sp"
+                    android:textAllCaps="true"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/grey2"
+                    android:layout_below="@+id/tvQuoteHeadLabel"
+                    android:fontFamily="@font/visbycf_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_below="@+id/tvQuoteSubLabel"
+                  android:layout_marginTop="16dp"
+                  android:layout_height="1px"
+                  android:id="@+id/hr5"
+                  android:background="@color/grey"/>
+
+            <TextView
+                    android:id="@+id/tvTotalAreaLabel"
+                    android:text="@string/total_liveable_area"
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_below="@+id/hr5"
+                    android:layout_marginStart="16dp"
+                    android:layout_alignParentStart="true"
+                    android:textColor="?attr/colorPrimary"
+                    android:fontFamily="@font/visbycf_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/tvTotalAreaValue"
+                    spannedText="@{vm.propertyOutput.total_liveable_area}"
+                    android:textSize="18sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_below="@+id/hr5"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/visbycf_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_below="@+id/tvTotalAreaLabel"
+                  android:layout_marginTop="16dp"
+                  android:layout_height="1px"
+                  android:id="@+id/hr6"
+                  android:background="@color/grey"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvQuoteDetails"
+                    android:layout_below="@+id/hr6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

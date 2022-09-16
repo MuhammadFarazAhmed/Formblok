@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fdd834</color>
+    <color name="colorPrimaryLight">#1AFDD834</color>
+    <color name="colorPrimaryVariant">#c6a700</color>
+    <color name="colorOnPrimary">#ffffff</color>
+
+    <color name="colorSecondary">#fdd834</color>
+    <color name="colorSecondaryVariant">#c6a700</color>
+    <color name="colorOnSecondary">#ffffff</color>
+
+    <color name="colorBackGround">#ffffff</color>
+    <color name="colorOnBackGround">#fdd834</color>
+
+    <color name="colorSurface">#ffffff</color>
+    <color name="colorOnSurface">#fdd834</color>
+
+    <color name="grey">#9B9889</color>
+    <color name="grey2">#A0A09F</color>
+    <color name="white">#ffffff</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="lightGrey">#D7D6D0</color>
+
+
+<!--    //Pickerview Colors-->
+    <color name="pickerview_wheelview_textcolor_out">@color/grey2</color>
+    <color name="pickerview_wheelview_textcolor_center">@color/colorPrimary</color>
+    <color name="pickerview_wheelview_textcolor_divider">@color/grey2</color>
+    <color name="bgColor_overlay">#60000000</color>
+    <color name="sea_blue">#49F4EA</color>
+    <color name="pink">#4FEB2B7E</color>
+</resources>

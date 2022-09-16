@@ -1,0 +1,42 @@
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="construction" type="com.incubasys.formblok.common.data.model.ConstructionMaterialOutput"/>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/ivZoneImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentTop="true"
+                android:src="@{construction.document.url}"
+                isCircle="@{true}"
+                android:background="@drawable/imageview_border_grey"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/image"/>
+
+        <TextView
+                android:id="@+id/tvZoneName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="@{construction.name}"
+                tools:text="Medium Brick Range"
+                android:gravity="center"
+                android:layout_below="@+id/ivZoneImage"
+                android:layout_alignStart="@+id/ivZoneImage"
+                android:layout_alignEnd="@+id/ivZoneImage"
+                android:layout_marginTop="8dp"
+                android:includeFontPadding="false"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/visbycf_medium"
+                android:layout_toEndOf="@+id/ivZoneImage"/>
+
+
+    </RelativeLayout>
+</layout>

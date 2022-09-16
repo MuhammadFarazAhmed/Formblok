@@ -1,0 +1,88 @@
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="match_parent" android:layout_width="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <RelativeLayout
+            android:id="@+id/rlInfoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <RelativeLayout
+                android:id="@+id/rlZoneContainer"
+                android:layout_width="match_parent"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/tvInfoPlaningLabel"
+                    android:text="@string/planning_information"
+                    android:textSize="18sp"
+                    android:layout_toStartOf="@+id/ivInfoImage"
+                    android:layout_alignParentStart="true"
+                    android:textColor="?attr/colorPrimary"
+                    android:fontFamily="@font/visbycf_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/tvInfoOverlayLabel"
+                    android:text="@string/overlays"
+                    android:textSize="12sp"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/grey2"
+                    android:layout_below="@+id/tvInfoPlaningLabel"
+                    android:fontFamily="@font/visbycf_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <ImageView
+                    android:id="@+id/ivInfoImage"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_info"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/image"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvZones"
+                    android:layout_below="@+id/tvInfoOverlayLabel"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="3"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:orientation="horizontal"
+                    tools:scrollbars="horizontal"
+                    tools:listitem="@layout/zone_list_item"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_below="@+id/rlZoneContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvProjectDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

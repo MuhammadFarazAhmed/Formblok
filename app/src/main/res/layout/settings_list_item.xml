@@ -1,0 +1,59 @@
+<layout>
+    <data>
+        <variable
+                name="setting"
+                type="com.incubasys.formblok.settings.data.Settings"/>
+    </data>
+
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <ImageView
+                android:id="@+id/ivSettingsImage"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:src="@{setting.thumbnail}"
+                android:contentDescription="@string/image"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"/>
+
+        <TextView
+                android:id="@+id/ivSettingsText"
+                android:text="@{setting.text}"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"
+                android:layout_toStartOf="@+id/ivRightIcon"
+                android:layout_toEndOf="@+id/ivSettingsImage"
+                android:fontFamily="@font/visbycf_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <ImageView
+                android:id="@+id/ivRightIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="fitCenter"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/image"
+                android:src="@drawable/ic_right_arrow"
+        />
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1px"
+              android:layout_marginStart="16dp"
+              android:layout_below="@+id/ivSettingsImage"
+              android:background="@color/lightGrey"/>
+
+    </RelativeLayout>
+
+</layout>

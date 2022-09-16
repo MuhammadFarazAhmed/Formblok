@@ -1,0 +1,322 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="vm" type="com.incubasys.formblok.quotation.viewmodel.CreateQuotationViewModel"/>
+    </data>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bottom_sheet_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="65dp"
+                        android:background="@drawable/presistant_sheet_bg"
+                        android:id="@+id/relativeLayout2">
+
+            <TextView
+                    android:id="@+id/tvRoomDetailHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/visbycf_bold"
+                    android:text="@{vm.room.name}"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="75dp"/>
+
+            <TextView
+                    android:id="@+id/tvRoomDetailSubHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="@color/grey"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginEnd="26dp"
+                    android:fontFamily="@font/visbycf_medium"
+                    android:layout_below="@+id/tvRoomDetailHeading"
+                    android:text="@string/please_adjust_the_size_below"/>
+
+            <RelativeLayout
+                    android:id="@+id/rlCalculationContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/tvRoomDetailSubHeading">
+
+                <EditText
+                        android:id="@+id/etWidth"
+                        android:background="@drawable/textview_bg"
+                        android:padding="8dp"
+                        android:ems="4"
+                        android:textSize="18sp"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:digits="0123456789."
+                        android:inputType="numberDecimal|numberSigned"
+                        tools:text="4.4m2"
+                        property="@={vm.customWidth}"
+                        android:layout_alignParentStart="true"
+                        android:gravity="center"
+                        android:fontFamily="@font/visbycf_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/width" android:textColor="@color/grey2"
+                          android:textSize="12sp"
+                          android:textAllCaps="true"
+                          android:includeFontPadding="false"
+                          android:layout_marginTop="4dp"
+                          android:fontFamily="@font/visbycf_light"
+                          android:layout_alignStart="@+id/etWidth"
+                          android:layout_alignEnd="@id/etWidth"
+                          android:gravity="center"
+                          android:id="@+id/etWidthLabel"
+                          android:layout_below="@+id/etWidth"
+                          android:layout_marginStart="8dp"
+                          android:layout_marginEnd="8dp"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/x" android:textColor="@color/grey2"
+                          android:textSize="16sp"
+                          android:id="@+id/tvMultiple"
+                          android:gravity="center"
+                          android:layout_toEndOf="@+id/etWidth"
+                          android:layout_marginStart="8dp"
+                          android:layout_alignTop="@+id/etWidth"
+                          android:layout_alignBottom="@id/etWidth"
+                          android:layout_marginEnd="8dp"/>
+
+                <EditText
+                        android:id="@+id/etLength"
+                        android:background="@drawable/textview_bg"
+                        android:padding="8dp"
+                        android:ems="4"
+                        android:textSize="18sp"
+                        tools:text="4.6m2"
+                        android:digits="0123456789."
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:gravity="center"
+                        property="@={vm.customLength}"
+                        android:inputType="numberDecimal|numberSigned"
+                        android:layout_toEndOf="@+id/tvMultiple"
+                        android:fontFamily="@font/visbycf_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/length"
+                          android:textColor="@color/grey2"
+                          android:textSize="12sp"
+                          android:textAllCaps="true"
+                          android:includeFontPadding="false"
+                          android:layout_marginTop="4dp"
+                          android:fontFamily="@font/visbycf_light"
+                          android:layout_alignStart="@+id/etLength"
+                          android:layout_alignEnd="@id/etLength"
+                          android:gravity="center"
+                          android:id="@+id/etLengthLabel"
+                          android:layout_below="@+id/etWidth"
+                          android:layout_marginStart="8dp"
+                          android:layout_marginEnd="8dp"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/equal"
+                          android:textColor="@color/grey2"
+                          android:textSize="16sp"
+                          android:id="@+id/tvEqual"
+                          android:layout_alignTop="@+id/etLength"
+                          android:layout_alignBottom="@+id/etLength"
+                          android:gravity="center"
+                          android:layout_toEndOf="@+id/etLength"
+                          android:layout_marginStart="8dp"
+                          android:layout_marginEnd="8dp"/>
+
+                <TextView
+                        android:id="@+id/etArea"
+                        android:background="@drawable/textview_bg"
+                        android:padding="8dp"
+                        android:ems="4"
+                        android:textSize="18sp"
+                        tools:text="36.96m2"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:layout_toEndOf="@+id/tvEqual"
+                        android:fontFamily="@font/visbycf_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/area" android:textColor="@color/grey2"
+                          android:textSize="12sp"
+                          android:textAllCaps="true"
+                          android:includeFontPadding="false"
+                          android:layout_marginTop="4dp"
+                          android:fontFamily="@font/visbycf_light"
+                          android:layout_alignStart="@+id/etArea"
+                          android:layout_alignEnd="@id/etArea"
+                          android:gravity="center"
+                          android:id="@+id/etAreaLabel"
+                          android:layout_below="@+id/etWidth"
+                          android:layout_marginStart="8dp"
+                          android:layout_marginEnd="8dp"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                    android:id="@+id/rlTotalCalculationArea"
+                    android:layout_below="@+id/rlCalculationContainer"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginEnd="45dp"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false">
+
+                <RelativeLayout android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+                    <TextView
+                            android:id="@+id/tvLiveableAreaValue"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:ems="4"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:textSize="18sp"
+                            spannedText="@{vm.propertyOutput.total_liveable_area}"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:fontFamily="@font/visbycf_bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="@string/liveable_area"
+                              android:textColor="@color/grey2"
+                              android:textSize="12sp"
+                              android:textAllCaps="true"
+                              android:includeFontPadding="false"
+                              android:layout_marginTop="4dp"
+                              android:fontFamily="@font/visbycf_light"
+                              android:layout_alignStart="@+id/tvLiveableAreaValue"
+                              android:layout_alignEnd="@id/tvLiveableAreaValue"
+                              android:layout_below="@+id/tvLiveableAreaValue"
+                              android:gravity="center"
+                              android:id="@+id/etLiveableLabel"/>
+                </RelativeLayout>
+
+                <RelativeLayout android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content">
+
+                    <TextView
+                            android:id="@+id/tvCalculatedAreaValue"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:ems="4"
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:fontFamily="@font/visbycf_bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"/>
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="@string/calculated_area"
+                              android:textColor="@color/grey2"
+                              android:textSize="12sp"
+                              android:textAllCaps="true"
+                              android:includeFontPadding="false"
+                              android:layout_marginTop="4dp"
+                              android:fontFamily="@font/visbycf_light"
+                              android:layout_alignStart="@+id/tvCalculatedAreaValue"
+                              android:layout_alignEnd="@id/tvCalculatedAreaValue"
+                              android:layout_below="@+id/tvCalculatedAreaValue"
+                              android:gravity="center"
+                              android:id="@+id/etCalculatedAreaLabel"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                    android:text="@string/confirm"
+                    android:layout_width="match_parent"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bRoomDetailConfirm"
+                    android:layout_below="@+id/rlTotalCalculationArea"
+                    android:minHeight="0dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:paddingTop="12dp"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/visbycf_bold"
+                    android:paddingBottom="12dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp" app:rippleColor="#FFC107"
+            />
+
+            <Button
+                    android:text="@string/cancel"
+                    android:layout_width="match_parent"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bRoomDetailCancel"
+                    android:layout_below="@+id/bRoomDetailConfirm"
+                    style="@style/buttonWhite"
+                    android:textColor="@color/grey"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/visbycf_light"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"/>
+
+        </RelativeLayout>
+
+        <ImageView
+                android:id="@+id/ivRoomDetailImage"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerInside"
+                android:src="@{vm.room.icon.url}"
+                tools:src="@drawable/ic_search_white"
+                android:tint="@color/white"
+                android:background="@drawable/radio_button_checked"
+                android:layout_marginBottom="-65dp"
+                android:contentDescription="@string/image"
+                android:layout_alignParentTop="true"
+        />
+
+    </RelativeLayout>
+</layout>

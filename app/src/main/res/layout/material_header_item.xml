@@ -1,0 +1,28 @@
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="material" type="com.incubasys.formblok.quotation.data.model.Material"/>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12sp">
+
+        <TextView
+                android:id="@+id/tvMetarialHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="External Walls"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/visbycf_bold"
+                android:textSize="18sp"
+                android:text="@{material.heading}"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:textColor="@android:color/black"/>
+
+    </RelativeLayout>
+</layout>

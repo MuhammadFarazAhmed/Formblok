@@ -1,0 +1,208 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:id="@+id/ivDevelopmentTypeBackArrow"
+                android:src="@drawable/ic_back_arrow"
+                android:scaleType="center"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:contentDescription="@string/image"/>
+
+        <TextView
+                android:id="@+id/tvDevelopmentTypeHeading"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="30sp"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeStepGranularity="2sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/visbycf_medium"
+                android:layout_below="@+id/ivDevelopmentTypeBackArrow"
+                tools:text="Welcome To \n FormBlok.io"
+                android:includeFontPadding="false"
+                android:layout_alignParentStart="true"
+        />
+
+        <RelativeLayout
+                android:layout_below="@+id/tvDevelopmentTypeHeading"
+                android:layout_above="@+id/ivDevelopmentTypeNext"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_marginBottom="8dp"
+                    android:id="@+id/llUpperContainer"
+                    android:gravity="center"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            android:id="@+id/ivSingle"
+                            android:src="@drawable/single_home"
+                            tools:src="@drawable/single_home"
+                            android:background="@drawable/imageview_border"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:scaleType="centerInside"
+                            android:contentDescription="@string/image"/>
+
+                    <TextView
+                            android:text="@string/single"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/visbycf_light"
+                            android:id="@+id/tvSingleLabel"
+                            android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            android:id="@+id/ivDouble"
+                            android:src="@drawable/double_home"
+                            tools:src="@drawable/double_home"
+                            android:background="@drawable/imageview_border"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:scaleType="centerInside"
+                            android:contentDescription="@string/image"/>
+
+                    <TextView
+                            android:text="@string/doubleLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/visbycf_light"
+                            android:id="@+id/tvDoubleLabel"
+                            android:gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/llLowerContainer"
+                    android:layout_below="@+id/llUpperContainer"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            android:id="@+id/ivMulti"
+                            android:src="@drawable/multi_home"
+                            tools:src="@drawable/multi_home"
+                            android:background="@drawable/imageview_border"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:scaleType="centerInside"
+                            android:contentDescription="@string/image"/>
+
+                    <TextView
+                            android:text="@string/multi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/visbycf_light"
+                            android:id="@+id/tvMultiLabel"
+                            android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            android:id="@+id/ivApartments"
+                            android:src="@drawable/apartments"
+                            tools:src="@drawable/apartments"
+                            android:background="@drawable/imageview_border"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:scaleType="centerInside"
+                            android:contentDescription="@string/image"/>
+
+                    <TextView
+                            android:text="@string/apartments"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/visbycf_light"
+                            android:id="@+id/tvApartmentsLabel"
+                            android:gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+                android:id="@+id/ivDevelopmentTypeNext"
+                android:clickable="true"
+                android:focusable="true"
+                android:checked="false"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/fab_background"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:contentDescription="@string/image"/>
+
+    </RelativeLayout>
+</layout>

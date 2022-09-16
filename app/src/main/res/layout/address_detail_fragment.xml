@@ -1,0 +1,139 @@
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="vm" type="com.incubasys.formblok.projects.viewmodel.AddressDetailViewModel"/>
+    </data>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/main_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/bAddressDetailGetQuote"
+                android:fitsSystemWindows="false">
+
+            <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/appBarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fitsSystemWindows="false">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:id="@+id/collapsingToolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="260dp"
+                        android:fitsSystemWindows="true"
+                        android:background="@color/colorOnPrimary"
+                        app:contentScrim="?attr/colorOnPrimary"
+                        app:expandedTitleMarginEnd="64dp"
+                        app:expandedTitleMarginStart="48dp"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <fragment
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/addressDetailMap"
+                            android:layout_alignParentTop="true"
+                            android:layout_below="@+id/addressDetailToolbar"
+                            android:layout_marginTop="24dp"
+                            app:layout_collapseMode="parallax"
+                            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+                            tools:context=".explore.ui.ExploreFragment"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                    />
+
+                    <include layout="@layout/toolbar"
+                             android:layout_width="match_parent"
+                             android:layout_alignParentTop="true"
+                             android:layout_marginTop="24dp"
+                             app:layout_collapseMode="pin"
+                             app:layout_scrollFlags="scroll|enterAlways"
+                             android:layout_height="?android:attr/actionBarSize"
+                             android:id="@+id/addressDetailToolbar"/>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <RelativeLayout
+                        android:id="@+id/rlAddressDetailTitleContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-16dp"
+                        android:background="@drawable/presistant_sheet_bg"
+                        android:layout_below="@+id/addressDetailMap"
+                        android:padding="16dp">
+
+                    <TextView
+                            android:id="@+id/tvAddress"
+                            tools:text="36A Porter Street"
+                            android:textSize="20sp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/visbycf_bold"
+                            android:includeFontPadding="true"
+                            android:gravity="center"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    <TextView
+                            android:id="@+id/tvArea"
+                            android:layout_below="@+id/tvAddress"
+                            tools:text="Prahran, VIC"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/visbycf_medium"
+                            android:textColor="@color/grey2"
+                            android:gravity="center"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="4dp"
+                            android:includeFontPadding="false"
+                            android:textAllCaps="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tlAddressDetailTabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:tabTextColor="@color/grey"
+                        android:layout_gravity="bottom"
+                        android:background="@color/colorPrimary"
+                        app:tabSelectedTextColor="@color/colorOnPrimary"
+                        app:tabTextAppearance="@style/projectDetailTabs"
+                />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vpAddressDetailPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/bAddressDetailGetQuote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                style="@style/buttonYellow"
+                android:textSize="18sp"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/visbycf_bold"
+                android:layout_gravity="center|bottom"
+                android:layout_alignParentBottom="true"
+                android:text="@string/get_quote"/>
+
+    </RelativeLayout>
+
+
+</layout>

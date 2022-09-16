@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/ivFloorBackArrow"
+            android:src="@drawable/ic_back_arrow"
+            android:scaleType="center"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/image"/>
+
+    <TextView
+            android:id="@+id/tvFloorHeading"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="30sp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeStepGranularity="2sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/visbycf_medium"
+            android:layout_below="@+id/ivFloorBackArrow"
+            tools:text="Welcome To \n FormBlok.io"
+            android:includeFontPadding="false"
+            android:layout_alignParentStart="true"/>
+
+
+    <com.incubasys.formblok.custom.wheelview.lib.WheelView
+            android:id="@+id/wheelView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textSize="30sp"
+            android:layout_below="@+id/tvFloorHeading"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/ivFloorNext"/>
+
+    <ImageView
+            android:id="@+id/ivFloorNext"
+            android:clickable="true"
+            android:focusable="true"
+            android:checked="false"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/fab_background"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:contentDescription="@string/image"/>
+
+</RelativeLayout>

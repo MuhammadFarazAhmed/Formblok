@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <import type="com.incubasys.formblok.common.data.remote.ApiStatus" />
+
+        <variable
+            name="networkState"
+            type="com.incubasys.formblok.common.data.model.SimpleResponse" />
+
+        <variable
+            name="callback"
+            type="com.incubasys.formblok.common.callback.NetworkStateCallback" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llNetworkStateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="@{networkState.apiStatus == ApiStatus.SUCCESS ? View.GONE : View.VISIBLE}"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/pbProgress"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:visibility="@{networkState.apiStatus == ApiStatus.LOADING ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/tvErrorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/visbycf_light"
+            android:gravity="center_horizontal"
+            android:visibility="@{networkState.message == `` ? View.GONE : View.VISIBLE}"
+            android:padding="16dp"
+            android:text="@{networkState.message == `` ? `` : networkState.message}"
+            android:textColor="@color/black_overlay"
+            tools:text="Unable to connect to internet" />
+
+        <Button
+            android:id="@+id/bRetryButton"
+            style="@style/buttonWhiteWithYellowOutline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="@{() -> callback.onRetryButtonClicked()}"
+            android:text="@{networkState.apiStatus == ApiStatus.EMPTY ? @string/refresh : @string/retry}"
+            android:visibility="@{networkState.message == `` ? View.GONE : View.VISIBLE}" />
+
+    </LinearLayout>
+
+</layout>

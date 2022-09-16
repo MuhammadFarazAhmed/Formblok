@@ -1,0 +1,119 @@
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+
+        <import type="com.incubasys.formblok.common.data.remote.ApiStatus"/>
+
+        <variable
+                name="callback"
+                type="com.incubasys.formblok.common.callback.PaginatedListViewCallback"/>
+
+        <variable name="vm" type="com.incubasys.formblok.projects.viewmodel.SelectProjectViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+        <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:id="@+id/ivSelectProjectBackArrow"
+                android:src="@drawable/ic_back_arrow"
+                android:scaleType="center"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/tvSelectProjectHeading"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="30sp"
+                app:autoSizeMaxTextSize="100sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:autoSizeStepGranularity="2sp"
+                android:fontFamily="@font/visbycf_medium"
+                android:layout_below="@+id/ivSelectProjectBackArrow"
+                tools:text="Welcome To \n FormBlok.io"
+                android:includeFontPadding="false"
+                android:layout_alignParentStart="true"
+                app:layout_constraintTop_toBottomOf="@+id/ivSelectProjectBackArrow"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/clProfileFragmentContainer"
+                tools:context="com.incubasys.formblok.profile.ui.ProfileFragment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="?attr/colorPrimary"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvSelectProjectHeading">
+
+            <ImageView
+                    android:src="@drawable/ic_search_white"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="16dp"
+                    android:id="@+id/ivProjectSearchImage"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@string/image"/>
+
+            <EditText
+                    style="@style/SimpleEditText"
+                    android:textSize="22sp"
+                    android:id="@+id/etSelectProjectFragmentSearchBox"
+                    android:fontFamily="@font/visbycf_light"
+                    android:layout_toEndOf="@+id/ivProjectSearchImage"
+                    android:layout_centerVertical="true"
+                    android:hint="@string/search"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:inputType="text"
+                    android:paddingTop="6dp"
+                    android:imeOptions="actionSearch"
+                    android:paddingBottom="8dp"
+                    android:includeFontPadding="false"
+                    android:textColorHint="@color/colorOnPrimary"
+                    android:textColor="@color/colorOnPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="Autofill"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="8dp"/>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProjectList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/clProfileFragmentContainer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="@{vm.networkState.apiStatus == ApiStatus.SUCCESS ? View.VISIBLE : View.GONE}"/>
+
+        <include
+                android:id="@+id/llNetworkStateContainer"
+                layout="@layout/network_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{vm.networkState.apiStatus == ApiStatus.SUCCESS ? View.GONE : View.VISIBLE}"
+                app:callback="@{callback}"
+                app:networkState="@{vm.networkState}"
+                app:layout_constraintBottom_toBottomOf="@+id/rvProjectList"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rvProjectList"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

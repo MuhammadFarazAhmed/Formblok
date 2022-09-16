@@ -1,0 +1,71 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/flSplashFragmentContainer"
+            tools:context="com.incubasys.formblok.splash.ui.fragment.SplashFragment">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="100dp"
+                  app:autoSizeTextType="uniform"
+                  app:autoSizeMinTextSize="72sp"
+                  app:autoSizeMaxTextSize="100sp"
+                  app:autoSizeStepGranularity="2sp"
+                  android:text="@string/formblok_io"
+                  android:layout_centerHorizontal="true"
+                  android:gravity="center"
+                  android:fontFamily="@font/visbycf_heavy"
+                  android:textColor="?attr/colorPrimary"
+                  android:includeFontPadding="false"
+                  android:letterSpacing="-0.06"
+                  android:id="@+id/tvSplashText"
+                  app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:src="@{@drawable/splash_background}"
+                android:id="@+id/ivSplashBackground"
+                android:contentDescription="@string/image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guideline"
+                tools:src="@drawable/splash_background"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:id="@+id/guideline"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.25"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/guideline2"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.29"/>
+
+        <ImageView
+                android:src="@drawable/logo_transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                app:layout_constraintBottom_toBottomOf="@+id/ivSplashBackground"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="@string/image"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"
+                app:layout_constraintVertical_bias="1.0"
+                android:layout_marginBottom="24dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

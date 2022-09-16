@@ -1,0 +1,109 @@
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="vm" type="com.incubasys.formblok.profile.viewmodel.EditProfileViewModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="?attr/colorOnPrimary">
+
+        <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:id="@+id/ivEditPhotoBackArrow"
+                android:src="@drawable/ic_back_arrow"
+                android:scaleType="center"
+                android:contentDescription="@string/image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/tvEditPhotoFragmentHeading"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="30sp"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeStepGranularity="2sp"
+                android:fontFamily="@font/visbycf_medium"
+                android:layout_below="@+id/ivEditPhotoBackArrow"
+                tools:text="Welcome To \n FormBlok.io"
+                android:includeFontPadding="false"
+                android:layout_alignParentStart="true"
+                app:layout_constraintTop_toBottomOf="@+id/ivEditPhotoBackArrow"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"/>
+
+        <ImageView
+                isCircle="@{true}"
+                android:background="@drawable/imageview_border"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:id="@+id/ivEditPhotoChoosePhoto"
+                android:padding="4dp"
+                android:src="@drawable/photo_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/image"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/llPhotoButtonContainer"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvEditPhotoFragmentHeading"/>
+
+        <LinearLayout
+                android:id="@+id/llPhotoButtonContainer"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.292">
+
+
+            <Button
+                    android:text="@string/use_photo"
+                    android:layout_width="match_parent"
+                    android:textSize="16sp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bEditPhotoUsePhoto"
+                    android:minHeight="0dp"
+                    android:paddingTop="12dp"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/visbycf_bold"
+                    android:paddingBottom="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="24dp"
+                    style="@style/buttonYellow"
+                    android:layout_marginEnd="24dp"/>
+
+            <Button
+                    android:text="@string/change_photo"
+                    android:layout_width="match_parent"
+                    android:textSize="16sp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bEditPhotoChangePhoto"
+                    android:minHeight="0dp"
+                    android:paddingTop="12dp"
+                    android:textColor="@color/grey"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/visbycf_bold"
+                    android:paddingBottom="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginStart="24dp"
+                    style="@style/buttonWhite"
+                    android:layout_marginEnd="24dp"/>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

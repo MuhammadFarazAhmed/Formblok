@@ -1,0 +1,121 @@
+<layout>
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            tools:context="com.incubasys.formblok.quotation.ui.BuildTypeFragment">
+
+        <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:id="@+id/ivBuildTypeBackArrow"
+                android:src="@drawable/ic_back_arrow"
+                android:scaleType="center"
+                android:contentDescription="@string/image"/>
+
+        <TextView
+                android:id="@+id/tvBuildTypeHeading"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="30sp"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeStepGranularity="2sp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/visbycf_medium"
+                android:layout_below="@+id/ivBuildTypeBackArrow"
+                tools:text="Welcome To \n FormBlok.io"
+                android:includeFontPadding="false"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="16dp"/>
+
+
+        <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:id="@+id/ivRennovation"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/tvOrLabel"
+                android:scaleType="centerInside"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_renovation"
+                tools:src="@drawable/ic_renovation"
+                android:background="@drawable/imageview_border"
+                android:contentDescription="@string/image"/>
+
+        <TextView
+                android:text="@string/or"
+                android:textSize="24sp"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/visbycf_medium"
+                android:textColor="@color/grey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvOrLabel"/>
+
+        <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:id="@+id/ivNewBuild"
+                android:src="@drawable/ic_new_build"
+                tools:src="@drawable/ic_new_build"
+                android:layout_toStartOf="@+id/tvOrLabel"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/imageview_border"
+                android:layout_marginStart="16dp"
+                android:clickable="true"
+                android:checked="false"
+                android:button="@null"
+                android:focusable="true"
+                android:scaleType="centerInside"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/image"/>
+
+        <ImageView
+                android:id="@+id/ivBuildTypeNext"
+                android:clickable="true"
+                android:focusable="true"
+                android:checked="false"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/fab_background"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:contentDescription="@string/image"/>
+
+        <TextView
+                android:text="@string/renovation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:fontFamily="@font/visbycf_light"
+                android:id="@+id/tvRennovationLabel"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:layout_below="@+id/ivRennovation"
+                android:layout_alignEnd="@+id/ivRennovation"
+                android:layout_alignStart="@+id/ivRennovation"/>
+
+        <TextView
+                android:text="@string/new_build"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:fontFamily="@font/visbycf_light"
+                android:id="@+id/tvNewBuildLabel"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:layout_alignStart="@+id/ivNewBuild"
+                android:layout_alignEnd="@id/ivNewBuild"
+                android:layout_below="@+id/ivNewBuild"/>
+
+
+    </RelativeLayout>
+
+</layout>

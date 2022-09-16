@@ -1,0 +1,46 @@
+<layout>
+    <data>
+        <variable
+                name="profile"
+                type="com.incubasys.formblok.profile.data.model.Profile"/>
+    </data>
+
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <ImageView
+                android:id="@+id/ivProfileImage"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:src="@{profile.thumbnail}"
+                android:contentDescription="@string/image"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"/>
+
+        <TextView
+                android:id="@+id/ivProfileText"
+                android:text="@{profile.text}"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/ivProfileImage"
+                android:fontFamily="@font/visbycf_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1px"
+              android:layout_marginStart="16dp"
+              android:layout_below="@+id/ivProfileImage"
+              android:background="@color/lightGrey"/>
+
+    </RelativeLayout>
+
+</layout>

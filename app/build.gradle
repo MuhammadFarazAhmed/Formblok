@@ -1,0 +1,177 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+android {
+    signingConfigs {
+        release {
+            storeFile file('D:\\formblock/keystore')
+            storePassword 'formblokpantera999'
+            keyPassword 'formblokpantera999'
+            keyAlias = 'formblok'
+        }
+    }
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.incubasys.formblok"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 14
+        versionName "1.0.13"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
+    }
+    buildTypes {
+        release {
+            debuggable false
+            buildConfigField 'String', 'API_KEY', '"formblocka1B2c3D4e5F6"'
+            buildConfigField 'String', 'BASE_URL', '"https://formblok.io/formblok_development/api/mobile/"'
+            minifyEnabled false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                renameAPK(variant, defaultConfig, 'R')
+            }
+        }
+        debug {
+            buildConfigField 'String', 'API_KEY', '"formblocka1B2c3D4e5F6"'
+            buildConfigField 'String', 'BASE_URL', '"https://formblok.io/formblok_development/api/mobile/"'
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-DEBUG'
+            applicationVariants.all { variant ->
+                renameAPK(variant, defaultConfig, 'D')
+            }
+            shrinkResources false
+            minifyEnabled false
+             zipAlignEnabled true
+             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '28.0.3'
+    dataBinding {
+        enabled = true
+    }
+    dexOptions {
+        preDexLibraries true
+    }
+    kapt {
+        javacOptions {
+            // Increase the max count of errors from annotation processors.
+            // Default is 100.
+            option("-Xmaxerrs", 1000)
+        }
+    }
+    androidExtensions {
+        experimental = true
+    }
+}
+
+def static renameAPK(variant, defaultConfig, buildType) {
+    variant.outputs.each { output ->
+        def formattedDate = new Date().format('HH-mm-dd-MMM-YYYY')
+        def fileName = "FormBlock" + "_V" + defaultConfig.versionCode + "_" + formattedDate + "_" + buildType + ".apk"
+        output.outputFileName = fileName
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'androidx.core:core-ktx:1.1.0-alpha05'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha04'
+
+    //LiveData and ViewModel
+    def lifecycle_version = "2.0.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    //Dagger 2
+    def dagger_version = "2.21"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    //Glide
+    def glide_version = "4.9.0"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    implementation("com.github.bumptech.glide:okhttp3-integration:$glide_version") {
+        transitive = false
+    }
+    implementation "com.github.bumptech.glide:annotations:$glide_version"
+
+    //Worker
+    def worker_version = "1.0.0"
+    implementation "android.arch.work:work-runtime:$worker_version"
+
+    //Paging
+    def paging_version = "2.1.0"
+    implementation "androidx.paging:paging-runtime:$paging_version"
+    implementation "androidx.paging:paging-rxjava2:$paging_version"
+
+    //Rx Kotlin
+    def rx_kotlin_version = "2.3.0"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rx_kotlin_version"
+
+    //Retrofit
+    def retrofit_version = "2.4.0"
+    def retrofit_android_version = "2.1.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$retrofit_android_version"
+
+    //OkHttp
+    def okhttp_version = "3.11.0"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    //Gson
+    def gson_version = "2.8.2"
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    //Joda time
+    def joda_version = "2.10"
+    implementation "joda-time:joda-time:$joda_version"
+
+    //Maps and Location
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.google.android.gms:play-services-places:16.1.0'
+    implementation 'com.google.android.libraries.places:places:1.1.0'
+
+    //Billing
+    implementation 'com.android.billingclient:billing:2.0.1'
+
+    //other
+    implementation 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
+    //noinspection GradleDynamicVersion
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    implementation 'com.github.florent37:singledateandtimepicker:2.1.4'
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.10.1@aar') {
+        transitive = true
+    }
+
+}

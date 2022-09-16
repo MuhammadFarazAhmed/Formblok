@@ -1,0 +1,88 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="vm" type="com.incubasys.formblok.settings.viewmodel.SettingsViewModel"/>
+    </data>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/clSettingsFragmentContainer"
+            tools:context="com.incubasys.formblok.profile.ui.ProfileFragment">
+
+        <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:id="@+id/ivSettingsBackArrow"
+                android:src="@drawable/ic_back_arrow"
+                android:scaleType="center"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/image"/>
+
+        <TextView
+                android:id="@+id/tvSettingsTitle"
+                android:layout_width="match_parent"
+                android:text="@string/settings_title"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="48sp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/visbycf_heavy"
+                android:textColor="?attr/colorPrimary"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeStepGranularity="2sp"
+                android:layout_height="60dp"
+                android:letterSpacing="-0.06"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:layout_marginBottom="-12dp"
+                android:layout_below="@+id/ivSettingsBackArrow"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="?attr/colorPrimary"
+                android:id="@+id/relativeLayout"
+                android:layout_below="@+id/tvSettingsTitle"/>
+
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1px"
+              android:id="@+id/hr"
+              android:layout_below="@+id/tvSettingsTitle"
+              android:layout_marginTop="16dp"
+              android:background="@color/lightGrey"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSettings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/hr"
+                android:layout_above="@+id/bSettingsLogout"
+                android:layout_alignParentStart="true"
+                tools:listItem="@layout/edit_profile_list_item"
+                android:layout_alignParentEnd="true"/>
+
+        <Button
+                android:id="@+id/bSettingsLogout"
+                tools:text="Log Out"
+                android:layout_width="match_parent"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:paddingTop="12dp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/visbycf_bold"
+                android:paddingBottom="12dp"
+                style="@style/buttonWhiteWithYellowOutline"
+                android:text="@string/log_out"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_alignParentBottom="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="24dp"/>
+
+    </RelativeLayout>
+
+</layout>

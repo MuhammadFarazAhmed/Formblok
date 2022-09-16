@@ -1,0 +1,54 @@
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="zone" type="com.incubasys.formblok.projects.data.model.Zone"/>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:padding="16dp"
+                    android:alpha="0.5"
+                    android:id="@+id/item_Background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/tvZoneHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="@string/zones"
+                android:textAllCaps="false"
+                tools:text="Zones"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/black"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/visbycf_bold"/>
+
+
+        <ImageView
+                android:id="@+id/ivZoneImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@{zone.thumbnail}"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:layout_below="@+id/tvZoneHeading"
+                tools:background="@drawable/ic_rectangle_seablue"
+                android:contentDescription="@string/image"/>
+
+        <TextView
+                android:id="@+id/tvZoneName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="@{zone.description}"
+                android:textAllCaps="false"
+                tools:text="Activty Center Zone"
+                android:layout_below="@+id/ivZoneImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/visbycf_medium"/>
+
+    </RelativeLayout>
+
+</layout>

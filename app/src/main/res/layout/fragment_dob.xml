@@ -1,0 +1,52 @@
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+    <data>
+        <variable name="vm" type="com.incubasys.formblok.auth.viewmodel.AuthViewModel"/>
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker
+                android:id="@+id/auth_single_day_picker"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:picker_curved="false"
+                app:picker_cyclic="true"
+                app:picker_mustBeOnFuture="false"
+                app:picker_displayHours="false"
+                app:picker_displayMinutes="false"
+                app:picker_displayDays="false"
+                app:picker_displayYears="true"
+                app:picker_displayMonth="true"
+                app:picker_selectorColor="?attr/colorOnPrimary"
+                app:picker_selectedTextColor="@color/colorPrimary"
+                app:picker_textSize="28sp"
+                app:picker_selectorHeight="70dp"
+                app:picker_displayDaysOfMonth="true"
+                android:layout_above="@+id/ivDobNext"
+                app:picker_visibleItemCount="5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"/>
+
+        <ImageView
+                android:id="@+id/ivDobNext"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/fab_background"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/image"/>
+
+    </RelativeLayout>
+
+</layout>

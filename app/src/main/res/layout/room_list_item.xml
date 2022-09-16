@@ -1,0 +1,105 @@
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="room" type="com.incubasys.formblok.common.data.model.RoomOutput"/>
+    </data>
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/rbRoomListItemRadio"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/radio_button_selector"
+                isChecked="@{room.isChecked}"
+                android:contentDescription="@string/image"
+                android:layout_centerVertical="true"
+        />
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/cvRoomAreaDetail"
+                app:cardCornerRadius="6dp"
+                android:layout_marginBottom="16dp"
+                app:cardPreventCornerOverlap="true"
+                android:layout_toEndOf="@+id/rbRoomListItemRadio"
+                android:layout_toStartOf="@+id/ivRoomListItemAddIcon"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp">
+
+                <ImageView
+                        android:id="@+id/ivRoomListItemRoomIcon"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:scaleType="centerInside"
+                        android:src="@{room.icon.url}"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/image"/>
+
+                <TextView
+                        android:id="@+id/tvRoomListItemHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:includeFontPadding="false"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_toStartOf="@+id/ivRoomListItemDropDownArrow"
+                        android:fontFamily="@font/visbycf_bold"
+                        android:layout_toEndOf="@+id/ivRoomListItemRoomIcon"
+                        android:text="@{room.name}"
+                        tools:text="Master Bedroom"/>
+
+                <TextView
+                        android:id="@+id/tvRoomListItemTotalArea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/ivRoomListItemRoomIcon"
+                        tools:text="4.4 x 8.4 = 36.76m2"
+                        android:textColor="@color/grey2"
+                        android:textSize="14sp"
+                        app:width="@{room.width}"
+                        app:length="@{room.length}"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_toStartOf="@+id/ivRoomListItemDropDownArrow"
+                        android:fontFamily="@font/visbycf_medium"
+                        android:layout_below="@+id/tvRoomListItemHeading"/>
+
+                <ImageView
+                        android:id="@+id/ivRoomListItemDropDownArrow"
+                        android:layout_width="16dp"
+                        android:src="@drawable/iv_arrow_down"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/image"
+                        android:layout_height="16dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+                android:id="@+id/ivRoomListItemAddIcon"
+                android:src="@drawable/ic_add_png"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:clickable="true"
+                android:layout_margin="16dp"
+                android:focusable="true"
+                android:contentDescription="@string/image"/>
+
+    </RelativeLayout>
+</layout>

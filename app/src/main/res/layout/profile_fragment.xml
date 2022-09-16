@@ -1,0 +1,105 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="vm" type="com.incubasys.formblok.profile.viewmodel.ProfileViewModel"/>
+    </data>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/clProfileFragmentContainer"
+            tools:context="com.incubasys.formblok.profile.ui.ProfileFragment">
+
+        <ImageView
+                android:id="@+id/ivProfileSettings"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/ic_settings"
+                android:contentDescription="@string/image"
+                android:layout_alignParentTop="true"/>
+
+        <TextView
+                android:id="@+id/tvProfileLabel"
+                android:layout_width="match_parent"
+                android:text="@string/account_title"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="48sp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/visbycf_heavy"
+                android:textColor="?attr/colorPrimary"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeStepGranularity="2sp"
+                android:layout_height="60dp"
+                android:letterSpacing="-0.06"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:layout_marginBottom="-12dp"
+                android:layout_below="@+id/ivProfileSettings"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="?attr/colorPrimary"
+                android:id="@+id/relativeLayout"
+                android:layout_below="@+id/tvProfileLabel">
+
+            <TextView
+                    android:id="@+id/tvEditProfileLabel"
+                    android:text="@string/edit_profile_label"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:textSize="20sp"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+        <ImageView
+                android:contentDescription="@string/image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/ivProfilePic"
+                android:padding="4dp"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/imageview_border"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                isCircle="@{true}"
+                android:src="@{vm.userPhoto}"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/photo_placeholder"
+                android:layout_alignTop="@+id/relativeLayout"/>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1px"
+              android:id="@+id/hr"
+              android:layout_below="@+id/ivProfilePic"
+              android:layout_marginTop="16dp"
+              android:background="@color/lightGrey"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/hr"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"/>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1px"
+              android:id="@+id/hr2"
+              android:layout_below="@+id/rvProfile"
+              android:layout_marginTop="16dp"
+              android:background="@color/lightGrey"/>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,118 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <import type="com.incubasys.formblok.common.data.remote.ApiStatus"/>
+
+        <variable
+                name="callback"
+                type="com.incubasys.formblok.common.callback.PaginatedListViewCallback"/>
+
+        <variable name="vm" type="com.incubasys.formblok.notification.viewmodel.NotificationViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/clNotificationFragmentContainer"
+            android:layout_height="match_parent"
+            tools:context="com.incubasys.formblok.notificationOutput.ui.NotificationFragment">
+
+        <ImageView
+                android:id="@+id/ivNotificationCrossIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/ic_settings"
+                android:contentDescription="@string/image"
+                android:layout_alignParentTop="true"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/clNotificationFragmentHeadingContainer"
+                tools:context="com.incubasys.formblok.profile.ui.ProfileFragment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivNotificationCrossIcon">
+
+            <TextView
+                    android:id="@+id/tvNotificationLabel"
+                    android:layout_width="match_parent"
+                    android:text="@string/Notification_label"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="48sp"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/visbycf_heavy"
+                    android:textColor="?attr/colorPrimary"
+                    app:autoSizeMaxTextSize="100sp"
+                    app:autoSizeStepGranularity="2sp"
+                    android:layout_height="60dp"
+                    android:letterSpacing="-0.06"
+                    android:layout_marginEnd="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="0dp"
+                    android:layout_marginBottom="-12dp"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="?attr/colorPrimary"
+                    android:id="@+id/relativeLayout"
+                    android:layout_below="@+id/tvNotificationLabel">
+
+                <TextView
+                        android:textSize="20sp"
+                        android:id="@+id/tvNotificationFragmentMarkAsReadLabel"
+                        android:fontFamily="@font/visbycf_bold"
+                        android:layout_centerVertical="true"
+                        android:hint="@string/mark_all_as_read"
+                        android:includeFontPadding="false"
+                        android:textColorHint="@color/colorOnPrimary"
+                        android:textColor="@color/colorOnPrimary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        tools:ignore="Autofill"
+                        android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNotificationList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clNotificationFragmentHeadingContainer"
+                android:visibility="@{vm.networkState.apiStatus == ApiStatus.SUCCESS ? View.VISIBLE : View.GONE}"/>
+
+        <include
+                android:id="@+id/llNetworkStateContainer"
+                layout="@layout/network_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{vm.networkState.apiStatus == ApiStatus.SUCCESS ? View.GONE : View.VISIBLE}"
+                app:callback="@{callback}"
+                app:networkState="@{vm.networkState}"
+                app:layout_constraintBottom_toBottomOf="@+id/rvNotificationList"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rvNotificationList"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

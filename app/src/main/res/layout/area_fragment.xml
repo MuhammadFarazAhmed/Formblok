@@ -1,0 +1,73 @@
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="match_parent" android:layout_width="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:layout_height="match_parent">
+
+        <RadioGroup
+                android:layout_alignParentTop="true"
+                android:id="@+id/llAreaButtonContainer"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbTraditional"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/traditional"
+                    app:cornerRadius="20dp"
+                    android:minWidth="0dp"
+                    android:textColor="?attr/colorPrimary"
+                    android:button="@null"
+                    android:background="@drawable/radio_button_background"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/visbycf_medium"
+                    android:textSize="18sp"/>
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbContemporary"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contemporary"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorPrimary"
+                    android:minWidth="0dp"
+                    android:background="@drawable/radio_button_background"
+                    android:button="@null"
+                    android:includeFontPadding="false"
+                    app:cornerRadius="20dp"
+                    android:fontFamily="@font/visbycf_medium"
+                    android:textSize="18sp"/>
+        </RadioGroup>
+
+        <View android:layout_width="match_parent"
+              android:layout_below="@+id/llAreaButtonContainer"
+              android:layout_height="1px"
+              android:id="@+id/hr7"
+              android:background="@color/grey"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAreaDetail"
+                android:layout_below="@+id/llAreaButtonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

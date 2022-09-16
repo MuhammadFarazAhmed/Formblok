@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.incubasys.formblok.common.data.remote.ApiStatus" />
+
+        <variable
+                name="data"
+                type="com.incubasys.formblok.common.data.model.SimpleResponse" />
+
+        <variable
+                name="callback"
+                type="com.incubasys.formblok.common.callback.PagedRecyclerCallback" />
+    </data>
+
+    <RelativeLayout
+            android:id="@+id/rlLoaderContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+        <ProgressBar
+                android:id="@+id/pbProgress"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="@{data.apiStatus == ApiStatus.LOADING ? View.VISIBLE : View.GONE }" />
+
+        <Button
+                android:id="@+id/bRetry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/retry"
+                android:onClick="@{()->callback.onPageReload()}"
+                android:textColor="@color/colorPrimary"
+                android:visibility="@{data.apiStatus == ApiStatus.ERROR ? View.VISIBLE : View.GONE }" />
+    </RelativeLayout>
+</layout>

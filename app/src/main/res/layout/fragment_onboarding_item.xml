@@ -1,0 +1,96 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/layout">
+    <data>
+        <variable name="vm"
+                  type="com.incubasys.formblok.onboard.viewmodel.OnboardingItemViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.Guideline
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/onboardingGuideline"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+                android:background="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/image"
+                app:layout_constraintBottom_toTopOf="@+id/onboardingGuideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <Button
+                android:text="@string/next_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bNextButton"
+                style="@style/buttonWhite"
+                android:textSize="16sp"
+                android:fontFamily="@font/visbycf_heavy"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:letterSpacing="-0.09"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"/>
+
+        <ImageView
+                tools:src="@drawable/onboarding1"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:id="@+id/ivOnboardingImage"
+                android:src="@{vm.onboarding.resId}"
+                android:contentDescription="@string/image"
+                app:layout_constraintBottom_toTopOf="@+id/tvOnboardingHeadingText"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.55"/>
+
+        <TextView
+                tools:text="Organise Your Build"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:fontFamily="@font/visbycf_heavy"
+                android:id="@+id/tvOnboardingHeadingText"
+                android:textColor="?attr/colorPrimary"
+                android:includeFontPadding="false"
+                android:text="@{vm.onboarding.upperText}"
+                app:layout_constraintTop_toBottomOf="@+id/ivOnboardingImage"
+                app:layout_constraintBottom_toTopOf="@+id/tvOnboardingDescriptionText"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
+
+        <TextView
+                tools:text="Get a realistic quote for the materials you wish you use for your build."
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvOnboardingDescriptionText"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:text="@{vm.onboarding.lowerText}"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/visbycf_medium"
+                android:includeFontPadding="false"
+                app:layout_constraintTop_toBottomOf="@+id/tvOnboardingHeadingText"
+                app:layout_constraintBottom_toTopOf="@+id/bNextButton"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp" android:layout_marginEnd="16dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

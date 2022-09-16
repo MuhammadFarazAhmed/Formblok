@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/ivMaterialBackArrow"
+            android:src="@drawable/ic_back_arrow"
+            android:scaleType="center"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/image"/>
+
+    <TextView
+            android:id="@+id/tvMaterialHeading"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="30sp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeStepGranularity="2sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/visbycf_medium"
+            android:layout_below="@+id/ivMaterialBackArrow"
+            tools:text="Welcome To \n FormBlok.io"
+            android:includeFontPadding="false"
+            android:layout_marginBottom="-12dp"
+            android:layout_alignParentStart="true"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_below="@+id/tvMaterialHeading"
+          android:layout_height="1px"
+          android:id="@+id/hr5"
+          android:background="@color/grey"/>
+
+    <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tlMaterialTabLayout"
+            android:layout_below="@+id/tvMaterialHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabTextColor="@color/grey"
+            android:background="@color/colorPrimary"
+            app:tabSelectedTextColor="@color/colorOnPrimary"
+            app:tabTextAppearance="@style/projectDetailTabs"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"/>
+
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vpMaterialPager"
+            android:layout_below="@+id/tlMaterialTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bMaterialNext"
+    />
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/bMaterialNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            style="@style/buttonYellow"
+            android:textSize="18sp"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/visbycf_bold"
+            android:layout_alignParentBottom="true"
+            android:text="@string/confirm"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"/>
+
+
+</RelativeLayout>

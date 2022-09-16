@@ -1,0 +1,67 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="vm"
+                  type="com.incubasys.formblok.auth.viewmodel.AuthViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.incubasys.formblok.auth.ui.fragment.EmailFragment">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/visbycf_bold"
+                  android:text="@string/name_"
+                  android:layout_above="@+id/etName"
+                  android:textColor="?attr/colorPrimary"
+                  android:textSize="15sp"
+                  android:id="@+id/tvNameLabel"
+                  android:textAllCaps="true"
+                  android:letterSpacing="0.09"
+                  android:visibility="invisible"
+                  app:layout_constraintBottom_toTopOf="@+id/etName"
+                  android:layout_marginStart="20dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintHorizontal_bias="0.0"/>
+
+        <EditText
+                android:id="@+id/etName"
+                style="@style/SimpleEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:hint="@string/please_enter_your_name_hint"
+                android:paddingBottom="4dp"
+                android:inputType="text"
+                android:text="@={vm.signUpInput.name}"
+                android:layout_centerInParent="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintVertical_bias="0.3"
+                tools:ignore="Autofill,TextFields"
+                android:layout_marginStart="20dp"/>
+
+        <ImageView
+                android:id="@+id/ivNameNext"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/fab_background"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@string/image"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

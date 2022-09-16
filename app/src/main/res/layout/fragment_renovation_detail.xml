@@ -1,0 +1,122 @@
+<layout>
+    <data>
+        <variable name="vm" type="com.incubasys.formblok.quotation.viewmodel.CreateQuotationViewModel"/>
+    </data>
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:id="@+id/ivRenovationDetailBackArrow"
+                android:src="@drawable/ic_back_arrow"
+                android:scaleType="center"
+                android:contentDescription="@string/image"/>
+
+        <TextView
+                android:id="@+id/tvRenovationDetailHeading"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="30sp"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeStepGranularity="2sp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/visbycf_medium"
+                android:layout_below="@+id/ivRenovationDetailBackArrow"
+                tools:text="Welcome To \n FormBlok.io"
+                android:includeFontPadding="false"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="16dp"/>
+
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/visbycf_bold"
+                  android:text="@string/built_area"
+                  android:layout_marginTop="60dp"
+                  android:textColor="?attr/colorPrimary"
+                  android:textSize="15sp"
+                  android:id="@+id/tvBuiltAreaLabel"
+                  android:layout_below="@+id/tvRenovationDetailHeading"
+                  android:textAllCaps="true"
+                  android:letterSpacing="0.09"
+                  app:layout_constraintBottom_toTopOf="@+id/etBuiltArea"
+                  android:layout_marginStart="20dp"/>
+
+        <EditText
+                android:id="@+id/etBuiltArea"
+                style="@style/SimpleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:hint="@string/please_enter_built_area"
+                android:paddingBottom="4dp"
+                android:layout_below="@+id/tvBuiltAreaLabel"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:inputType="numberDecimal|numberSigned"
+                android:maxLines="1"
+                android:lines="1"
+                android:onTextChanged="@{()->vm.validateBuiltArea()}"
+                android:text="@={vm.builtArea}"
+                app:validate="@{vm.builtAreaError}"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/visbycf_bold"
+                  android:text="@string/demolish_area"
+                  android:layout_marginTop="30dp"
+                  android:layout_below="@+id/etBuiltArea"
+                  android:textColor="?attr/colorPrimary"
+                  android:textSize="15sp"
+                  android:id="@+id/tvDemolishArealabel"
+                  android:textAllCaps="true"
+                  android:letterSpacing="0.09"
+                  android:layout_marginStart="20dp"/>
+
+        <EditText
+                android:id="@+id/etDemolishedArea"
+                style="@style/SimpleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:layout_below="@+id/tvDemolishArealabel"
+                android:hint="@string/please_enter_the_demolish_area"
+                android:paddingBottom="4dp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:lines="1"
+                android:onTextChanged="@{()->vm.validateDemolishArea()}"
+                android:text="@={vm.demolisedArea}"
+                app:validate="@{vm.demolishAreaError}"
+                android:layout_marginEnd="20dp"
+                tools:ignore="Autofill,TextFields"
+                android:layout_marginStart="20dp"/>
+
+
+        <ImageView
+                android:id="@+id/ivRenovationDetailNext"
+                android:clickable="true"
+                android:focusable="true"
+                android:checked="false"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/fab_background"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:contentDescription="@string/image"/>
+
+
+    </RelativeLayout>
+
+</layout>

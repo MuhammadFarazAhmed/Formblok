@@ -1,0 +1,72 @@
+<layout>
+    <data>
+        <variable name="vm" type="com.incubasys.formblok.auth.viewmodel.AuthViewModel"/>
+    </data>
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:fitsSystemWindows="true"
+            android:id="@+id/rlAuthContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ProgressBar
+                android:id="@+id/pbAuthProgressbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:max="120"
+                android:progressBackgroundTint="?attr/colorPrimary"
+                style="?android:attr/progressBarStyleHorizontal"/>
+
+        <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:id="@+id/ivAuthBackArrow"
+                android:src="@drawable/ic_back_arrow"
+                android:scaleType="center"
+                android:visibility="invisible"
+                android:layout_below="@+id/pbAuthProgressbar"
+                android:contentDescription="@string/image"/>
+
+        <TextView
+                android:id="@+id/tvAuthHeading"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="30sp"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeStepGranularity="2sp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/visbycf_medium"
+                android:layout_below="@+id/ivAuthBackArrow"
+                tools:text="Welcome To \n FormBlok.io"
+                android:includeFontPadding="false"
+                android:layout_alignStart="@+id/ivAuthLogo"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="16dp"/>
+
+        <ImageView
+                android:id="@+id/ivAuthLogo"
+                android:layout_height="70dp"
+                android:layout_width="70dp"
+                android:layout_alignBottom="@+id/tvAuthHeading"
+                android:src="@drawable/logo_yellow"
+                android:tint="@color/colorPrimary"
+                android:visibility="invisible"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@+id/pbAuthProgressbar"
+                android:contentDescription="@string/image"/>
+
+        <RelativeLayout
+                android:id="@+id/flAuthContainer"
+                android:layout_below="@+id/tvAuthHeading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+    </RelativeLayout>
+
+</layout>

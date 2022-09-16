@@ -1,0 +1,121 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="vm" type="com.incubasys.formblok.profile.viewmodel.EditProfileViewModel"/>
+    </data>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/clProfileFragmentContainer"
+            tools:context="com.incubasys.formblok.profile.ui.ProfileFragment">
+
+        <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:id="@+id/ivEditProfileBackArrow"
+                android:src="@drawable/ic_back_arrow"
+                android:scaleType="center"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/image"/>
+
+        <TextView
+                android:id="@+id/tvEditProfileTitle"
+                android:layout_width="match_parent"
+                android:text="@string/edit_profile_label"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="48sp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/visbycf_heavy"
+                android:textColor="?attr/colorPrimary"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeStepGranularity="2sp"
+                android:layout_height="60dp"
+                android:letterSpacing="-0.06"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:layout_marginBottom="-12dp"
+                android:layout_below="@+id/ivEditProfileBackArrow"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="?attr/colorPrimary"
+                android:id="@+id/relativeLayout"
+                android:layout_below="@+id/tvEditProfileTitle"/>
+
+        <ImageView
+                android:contentDescription="@string/image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/ivEditProfilePic"
+                android:padding="4dp"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/imageview_border"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                isCircle="@{true}"
+                android:src="@{vm.userPhoto}"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/photo_placeholder"
+                android:layout_alignTop="@+id/relativeLayout"/>
+
+        <TextView
+                android:id="@+id/ivEditProfileChangePhotoLabel"
+                android:textColor="?attr/colorPrimary"
+                android:text="@string/change_photo"
+                android:textSize="16sp"
+                android:layout_below="@+id/ivEditProfilePic"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/visbycf_heavy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1px"
+              android:id="@+id/hr"
+              android:layout_below="@+id/ivEditProfileChangePhotoLabel"
+              android:layout_marginTop="16dp"
+              android:background="@color/lightGrey"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/hr"
+                android:layout_above="@+id/bEditProfileSave"
+                android:layout_alignParentStart="true"
+                tools:listItem="@layout/edit_profile_list_item"
+                android:layout_alignParentEnd="true"/>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1px"
+              android:id="@+id/hr2"
+              android:layout_below="@+id/rvEditProfile"
+              android:background="@color/lightGrey"/>
+
+        <Button
+                android:id="@+id/bEditProfileSave"
+                tools:text="Save"
+                android:layout_width="match_parent"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:paddingTop="12dp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/visbycf_bold"
+                android:paddingBottom="12dp"
+                android:text="@string/save"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_alignParentBottom="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="24dp"
+                style="@style/buttonYellow"/>
+
+    </RelativeLayout>
+
+</layout>

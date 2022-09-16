@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        tools:background="?attr/colorPrimary"
+        android:layout_height="match_parent">
+
+    <ImageView android:layout_width="200dp"
+               android:layout_height="200dp"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               android:src="@drawable/email_sent"
+               android:id="@+id/ivMessageImage" app:layout_constraintHorizontal_bias="0.497"
+               app:layout_constraintBottom_toTopOf="@+id/tvMessageHeading"
+               app:layout_constraintVertical_chainStyle="packed"/>
+
+    <TextView android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:textSize="30sp"
+              android:textColor="?attr/colorOnPrimary"
+              tools:text="@string/email_sent"
+              android:fontFamily="@font/visbycf_bold"
+              android:id="@+id/tvMessageHeading"
+              android:gravity="center"
+              app:layout_constraintTop_toBottomOf="@+id/ivMessageImage"
+              app:layout_constraintBottom_toTopOf="@+id/tvMessageSubHeading"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="24dp"/>
+
+    <TextView android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:textSize="20sp"
+              android:textColor="?attr/colorOnPrimary"
+              android:gravity="center"
+              tools:text="@string/reset_password_instructions"
+              android:fontFamily="@font/visbycf_medium"
+              android:id="@+id/tvMessageSubHeading"
+              app:layout_constraintTop_toBottomOf="@+id/tvMessageHeading"
+              app:layout_constraintBottom_toTopOf="@+id/bMessage" android:layout_marginTop="16dp"
+              app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+              android:layout_marginStart="32dp" android:layout_marginEnd="32dp"/>
+    <Button
+            tools:text="Open Mail App"
+            android:layout_width="0dp"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bMessage"
+            android:minHeight="0dp"
+            android:paddingTop="12dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/visbycf_bold"
+            android:paddingBottom="12dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp"
+            style="@style/buttonWhite"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

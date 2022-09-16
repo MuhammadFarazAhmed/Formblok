@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.incubasys.formblok">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true"/>
+
+    <application
+            android:name=".FormBlokApplication"
+            android:debuggable="false"
+            android:allowBackup="true"
+            android:fullBackupContent="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+            tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
+        <activity android:name=".quotation.ui.CreateQuotationActivity"
+                  android:configChanges="keyboardHidden|orientation"
+                  android:theme="@style/AppTheme.NoActionBar"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+                android:name=".projects.ui.AddressDetailActivity"
+                android:configChanges="keyboardHidden|orientation"
+                android:theme="@style/AppTheme.NoActionBar.TransculentStatusBar"
+                android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+                android:name=".projects.ui.PropertyDetailActivity"
+                android:configChanges="keyboardHidden|orientation"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
+        <activity
+                android:name=".projects.ui.CreateProjectActivity"
+                android:configChanges="keyboardHidden|orientation"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+                android:name=".settings.ui.SettingsActivity"
+                android:configChanges="keyboardHidden|orientation"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+                android:name=".profile.ui.EditProfileActivity"
+                android:configChanges="keyboardHidden|orientation"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+                android:name=".splash.ui.activity.SplashActivity"
+                android:configChanges="keyboardHidden|orientation"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="stateHidden|adjustResize|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".onboard.ui.activity.OnboardingActivity"
+                android:configChanges="keyboardHidden|orientation"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="stateHidden|adjustResize|adjustPan"/>
+        <activity
+                android:name=".auth.ui.activity.AuthActivity"
+                android:configChanges="keyboardHidden|orientation"
+                android:launchMode="singleTask"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="adjustResize|stateHidden">
+            <tools:validation testUrl="https://formblok.io/formblok_development/reset_password"/>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                        android:scheme="https"
+                        android:host="formblok.io"
+                        android:pathPrefix="/formblok_development/reset_password"/>
+            </intent-filter>
+
+        </activity>
+        <activity
+                android:name=".home.ui.HomeActivity"
+                android:configChanges="keyboardHidden|orientation"
+                android:label="@string/title_activity_maps"
+                android:launchMode="singleTask"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="stateHidden|adjustResize|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                        android:scheme="https"
+                        android:host="formblok.io"
+                        android:pathPrefix="/formblok_development/share"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".common.ui.MessageActivity"
+                android:configChanges="keyboardHidden|orientation"
+                android:noHistory="true"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="stateHidden|adjustResize|adjustPan"/>
+        <activity
+                android:name=".terms.ui.PrivacyPolicyActivity"
+                android:theme="@style/AppTheme.NoActionBar.Transparent.DimBackground"/>
+
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="@string/google_maps_key"/>
+
+        <meta-data
+                android:name="io.fabric.ApiKey"
+                android:value="4dfeff7fd5e5e5dd7ff1152c05a2b1dac228b591"
+        />
+
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="${applicationId}.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"/>
+        </provider>
+    </application>
+
+</manifest>
